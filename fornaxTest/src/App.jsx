@@ -22,10 +22,9 @@ function App() {
     };
 
     // console.log(userData);
-    const response = await fornaxAxios.post("/library/auth/login", userData); 
+    const response = await fornaxAxios.post("/api/auth/login", userData); 
     
     if(response.data){
-        // sessionStorage.setItem('user', JSON.stringify(response.data.data.token));
         sessionStorage.setItem('authToken', JSON.stringify(response.data.data.token));
     }
     return response.data;
@@ -34,7 +33,7 @@ function App() {
   return (
     <div className="App" >
       
-      <iframe src="https://www.fornaxcloud.com" onLoad={login} frameborder="2" width={'1200px'} height='400px'></iframe>
+      <iframe src="https://fornaxcloud.com/login" onLoad={login} frameborder="2" width={'1200px'} height='400px'></iframe>
       <div className="card">
         <button onClick={visitPage}>
           Click me to navigate

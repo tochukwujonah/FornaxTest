@@ -2,16 +2,18 @@ import axios from 'axios'
 
 export default axios.create({
    
-    baseURL: "https://fornaxqa.southeastasia.cloudapp.azure.com/fornaxcloudqa",
+    baseURL: "http://fornaxqa.southeastasia.cloudapp.azure.com/fornaxcloudqa",
     headers: {
       'Content-Type':'application/json',
-      "Access-Control-Allow-Origin": "http://127.0.0.1:5173", 
-      'Authorization': `Bearer ${JSON.parse(sessionStorage.getItem("token"))}`,
+      "Access-Control-Allow-Origin": "*", 
+      'Authorization': `Bearer ${JSON.parse(sessionStorage.getItem("authToken"))}`,
       // 'Content-Type': 'multipart/form-data'
     },
   });
 
+  
 
+  // http://fornaxqa.southeastasia.cloudapp.azure.com/fornaxcloudqa
 
 
   // const login = async (userData) => {
